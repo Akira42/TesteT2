@@ -16,7 +16,7 @@ function btnEnviar() {
     }
 
     $.ajax({ 
-    headers: {'candidate': 'vitorakira42@gmail.com', 'Allow-Control-Allow-Origin':'*'},
+    headers: {'x-candidate': 'vitorakira42@gmail.com', 'Access-Control-Allow-Headers':'x-candidate'},
     url: "https://85k7bv04na.execute-api.us-east-1.amazonaws.com/dev/register", 
     type: "POST", 
     data: {name: inputNome, email: inputEmail}, 
