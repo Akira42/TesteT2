@@ -28,7 +28,7 @@ function btnEnviar() {
     });
 
     xhr.open("POST", "https://85k7bv04na.execute-api.us-east-1.amazonaws.com/dev/register");
-    xhr.setRequestHeader("X-candidate", "vitorakira42@gmail.com");
+    xhr.setRequestHeader("candidate", "vitorakira42@gmail.com");
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.send(data);
