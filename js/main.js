@@ -15,13 +15,23 @@ function btnEnviar() {
         return;
     }
 
-    $.ajax({ 
-    headers: {'x-candidate': 'vitorakira42@gmail.com', 'Access-Control-Allow-Headers':'x-candidate'},
-    url: "https://85k7bv04na.execute-api.us-east-1.amazonaws.com/dev/register", 
-    type: "POST", 
-    data: {name: inputNome, email: inputEmail}, 
-    dataType: "json", 
-    }); 
+    
+    var data = JSON.stringify({"name":"Vitor Akira","email":"vitorakira42@gmail.com"});
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function() {
+      if(this.readyState === 4) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("POST", "https://85k7bv04na.execute-api.us-east-1.amazonaws.com/dev/register");
+    xhr.setRequestHeader("X-candidate", "vitorakira42@gmail.com");
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.send(data);
 
     alert("Enviado")
 }
