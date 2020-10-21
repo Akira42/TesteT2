@@ -19,7 +19,7 @@ function btnEnviar() {
     var data = JSON.stringify({"name":"Vitor Akira","email":"vitorakira42@gmail.com"});
 
     var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+    xhr.withCredentials = false;
 
     xhr.addEventListener("readystatechange", function() {
       if(this.readyState === 4) {
